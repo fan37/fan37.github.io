@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -90,7 +90,7 @@
         <p>드디어 블로그 플랫폼을 하나 정해 정착하기로 한다(사실 돌아다닌 곳도 없지만).<br>내가 쓴 글들을 최대한 단순하게 관리할 수 있고 직접 가지고 있을 수 있는 방식으로 정적 HTML 생성기를 택했다.</p>
 <p>Github에서는 Github Page라는 무료 호스팅 서비스를 제공한다. 여기에다가 Github에서 제공하는 페이지 제작 도구를 이용해 문서를 작성할 수도 있고, 직접 HTML 파일을 올려서 활용 할 수도 있다. 다만 JSP, PHP 등의 서버사이드 언어는 구동시키지 못한다. 그래서 여기에 올릴 HTML은 마크업 언어로 작성한 파일을 Hexo나 Jekyll 등의 정적 HTML 생성기를 사용해 미리 작성한 후 git을 이용해 업로드 하는 방식을 사용한다.</p>
 <p>현재 가장 많이 쓰이는 것은 Jekyll로 보이고, Hexo도 나름 많은 사용자를 얻어가고 있다. 내가 Hexo를 선택한 것은 Node.js로 만들어져 있다는 이유인데, 요즘에 나름 Node.js를 조금 익혀보겠다고 건드려 본 터라 익숙하게 느껴졌고, 혹시나(?) 필요하다면 직접 오류를 수정하거나 기능을 추가할 수 있다는 점도 고려했다(Jekyll은 Ruby 기반).</p>
-<h2 id="일단-해보기-Hexo-설치"><a href="#일단-해보기-Hexo-설치" class="headerlink" title="일단 해보기 - Hexo 설치"></a>일단 해보기 - Hexo 설치</h2><p>Hexo를 설치하고 새로운 포스트를 생성하여 확인하는 과정까지가 매우 손쉽기 때문에, 일단 바로 해보도록 하자. <a href="https://hexo.io" target="_blank" rel="external">Hexo 사이트</a>에도 잘 설명되어 있지만, 여기서 더욱 간단하고 빠르게 설명해본다. </p>
+<h2 id="일단-해보기-Hexo-설치"><a href="#일단-해보기-Hexo-설치" class="headerlink" title="일단 해보기 - Hexo 설치"></a>일단 해보기 - Hexo 설치</h2><p>Hexo를 설치하고 새로운 포스트를 생성하여 확인하는 과정까지가 매우 손쉽기 때문에, 일단 바로 해보도록 하자. <a href="https://hexo.io" target="_blank" rel="external">Hexo 사이트</a>에도 잘 설명되어 있지만, 여기서 더욱 간단하고 빠르게 설명해본다. 감을 잡기 위한 기본 사용법만 소개할테니 자세한 내용은 Hexo 사이트를 참조하자.</p>
 <p>우선 Hexo를 사용하기 위해서는 Node.js를 설치해야 한다. 설치되어 있지 않다면 <a href="https://nodejs.org" target="_blank" rel="external">nodejs.org</a>에서 다운로드 받아 설치한다.</p>
 <p>Node.js가 설치되면 커맨드 라인에서 패키지 관리자 npm을 사용해 아래와 같이 Hexo를 설치한다.</p>
 <pre><code>$ npm install hexo-cli -g
@@ -101,12 +101,20 @@ $ npm install
 </code></pre><p>블로그가 생성되었다. 아래 명령으로 웹서버를 구동해 생성된 블로그를 확인해볼 수 있다.</p>
 <pre><code>$ hexo server
 </code></pre><p><a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 주소로 접속해서 확인!</p>
-<p>hello world라는 하나의 포스트가 생긴 것을 확인할 수 있다. 이 포스트는 블로그 디렉토리의 source/_posts 밑에 .md 파일(마크다운 파일 확장자)로 존재한다. 이 문서를 텍스트 에디터나 마크다운 편집기로 수정하여 포스트 내용을 수정할 수 있다.</p>
-<h2 id="정적-파일을-생성해-실제로-Github에-올려보기"><a href="#정적-파일을-생성해-실제로-Github에-올려보기" class="headerlink" title="정적 파일을 생성해 실제로 Github에 올려보기"></a>정적 파일을 생성해 실제로 Github에 올려보기</h2>
+<p>hello world라는 하나의 포스트가 생긴 것을 확인할 수 있다. 이 포스트는 블로그 디렉토리의 source/_posts 밑에 .md 파일(마크다운 파일 확장자)로 존재한다. 이 문서를 텍스트 에디터나 마크다운 편집기로 수정하여 포스트 내용을 수정할 수 있다. </p>
+<p>새로운 포스트를 추가하려면 다음과 같이 하면 된다.</p>
+<pre><code>$ hexo new &quot;포스트 이름&quot; 
+</code></pre><h2 id="정적-파일을-생성해-실제로-Github에-올려보기"><a href="#정적-파일을-생성해-실제로-Github에-올려보기" class="headerlink" title="정적 파일을 생성해 실제로 Github에 올려보기"></a>정적 파일을 생성해 실제로 Github에 올려보기</h2><p>다음 명령을 통해 마크다운으로 작성된 포스트를 실제 템플릿을 통해 HTML로 생성한다.</p>
+<pre><code>$ hexo generate
+</code></pre><p>명령 실행 후에 public 디렉토리에 실제 HTML과 관련 리소스가 생성된다. 이를 Github에 올리면 그대로 멋진 블로그가 된다. 이것을 자동으로 해주는 npm 패키지가 있다.</p>
+<p>블로그 디렉토리에 다음과 같이 hexo-deployer-git을 설치한다.</p>
+<pre><code>npm install --save hexo-deployer-git
+</code></pre><p>그리고는 다음 명령어 하나면 public 디렉토리에 생성된 HTML들을 Github에 올려준다.<br>참~ 쉽죠?</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/02/28/Hexo와-Github로-블로그-시작하기/" data-id="cizpkurrt0000946x8fbnq077" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/02/28/Hexo와-Github로-블로그-시작하기/" data-id="cizpozjdi0001906xqq5b5fp7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo-블로그/">Hexo, 블로그</a></li></ul>
@@ -153,7 +161,7 @@ $ npm install
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/02/28/hello-world/" data-id="cizpkurs90001946xmpidmdu5" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/02/28/hello-world/" data-id="cizpozjde0000906xucdfd56c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -170,7 +178,7 @@ $ npm install
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Catégories</h3>
+    <h3 class="widget-title">Categories</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/발로-쓰는-개발-로그/">발로 쓰는 개발 로그</a></li></ul>
     </div>
@@ -180,7 +188,7 @@ $ npm install
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Mot-clés</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-블로그/">Hexo, 블로그</a></li></ul>
     </div>
@@ -190,7 +198,7 @@ $ npm install
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/Hexo-블로그/" style="font-size: 10px;">Hexo, 블로그</a>
     </div>
@@ -209,7 +217,7 @@ $ npm install
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -234,7 +242,7 @@ $ npm install
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 Chanhee Jo<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
