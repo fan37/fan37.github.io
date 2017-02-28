@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Dev stuff</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Dev stuff">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Dev stuff">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dev stuff">
+  
+    <link rel="alternate" href="/atom.xml" title="Dev stuff" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Dev stuff</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Hexo와-Github로-블로그-시작하기" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/28/Hexo와-Github로-블로그-시작하기/" class="article-date">
+  <time datetime="2017-02-28T13:20:33.000Z" itemprop="datePublished">2017-02-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/발로-쓰는-개발-로그/">발로 쓰는 개발 로그</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/28/Hexo와-Github로-블로그-시작하기/">Hexo와 Github로 블로그 시작하기</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>드디어 블로그 플랫폼을 하나 정해 정착하기로 한다(사실 돌아다닌 곳도 없지만).<br>내가 쓴 글들을 최대한 단순하게 관리할 수 있고 직접 가지고 있을 수 있는 방식으로 정적 HTML 생성기를 택했다.</p>
+<p>Github에서는 Github Page라는 무료 호스팅 서비스를 제공한다. 여기에다가 Github에서 제공하는 페이지 제작 도구를 이용해 문서를 작성할 수도 있고, 직접 HTML 파일을 올려서 활용 할 수도 있다. 다만 JSP, PHP 등의 서버사이드 언어는 구동시키지 못한다. 그래서 여기에 올릴 HTML은 마크업 언어로 작성한 파일을 Hexo나 Jekyll 등의 정적 HTML 생성기를 사용해 미리 작성한 후 git을 이용해 업로드 하는 방식을 사용한다.</p>
+<p>현재 가장 많이 쓰이는 것은 Jekyll로 보이고, Hexo도 나름 많은 사용자를 얻어가고 있다. 내가 Hexo를 선택한 것은 Node.js로 만들어져 있다는 이유인데, 요즘에 나름 Node.js를 조금 익혀보겠다고 건드려 본 터라 익숙하게 느껴졌고, 혹시나(?) 필요하다면 직접 오류를 수정하거나 기능을 추가할 수 있다는 점도 고려했다(Jekyll은 Ruby 기반).</p>
+<h2 id="일단-해보기-Hexo-설치"><a href="#일단-해보기-Hexo-설치" class="headerlink" title="일단 해보기 - Hexo 설치"></a>일단 해보기 - Hexo 설치</h2><p>Hexo를 설치하고 새로운 포스트를 생성하여 확인하는 과정까지가 매우 손쉽기 때문에, 일단 바로 해보도록 하자. <a href="https://hexo.io" target="_blank" rel="external">Hexo 사이트</a>에도 잘 설명되어 있지만, 여기서 더욱 간단하고 빠르게 설명해본다. </p>
+<p>우선 Hexo를 사용하기 위해서는 Node.js를 설치해야 한다. 설치되어 있지 않다면 <a href="https://nodejs.org" target="_blank" rel="external">nodejs.org</a>에서 다운로드 받아 설치한다.</p>
+<p>Node.js가 설치되면 커맨드 라인에서 패키지 관리자 npm을 사용해 아래와 같이 Hexo를 설치한다.</p>
+<pre><code>$ npm install hexo-cli -g
+</code></pre><p>Hexo가 설치되면 원하는 이름으로 블로그를 생성하고 해당 디렉토리에서 npm install을 실행하여 필요한 패키지가 설치되도록 한다.</p>
+<pre><code>$ hexo init myblog
+$ cd myblog
+$ npm install
+</code></pre><p>블로그가 생성되었다. 아래 명령으로 웹서버를 구동해 생성된 블로그를 확인해볼 수 있다.</p>
+<pre><code>$ hexo server
+</code></pre><p><a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 주소로 접속해서 확인!</p>
+<p>hello world라는 하나의 포스트가 생긴 것을 확인할 수 있다. 이 포스트는 블로그 디렉토리의 source/_posts 밑에 .md 파일(마크다운 파일 확장자)로 존재한다. 이 문서를 텍스트 에디터나 마크다운 편집기로 수정하여 포스트 내용을 수정할 수 있다.</p>
+<h2 id="정적-파일을-생성해-실제로-Github에-올려보기"><a href="#정적-파일을-생성해-실제로-Github에-올려보기" class="headerlink" title="정적 파일을 생성해 실제로 Github에 올려보기"></a>정적 파일을 생성해 실제로 Github에 올려보기</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/02/28/Hexo와-Github로-블로그-시작하기/" data-id="cizpkurrt0000946x8fbnq077" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo-블로그/">Hexo, 블로그</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/28/hello-world/" class="article-date">
+  <time datetime="2017-02-28T13:00:22.069Z" itemprop="datePublished">2017-02-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/28/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/02/28/hello-world/" data-id="cizpkurs90001946xmpidmdu5" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/발로-쓰는-개발-로그/">발로 쓰는 개발 로그</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-블로그/">Hexo, 블로그</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Hexo-블로그/" style="font-size: 10px;">Hexo, 블로그</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/02/28/Hexo와-Github로-블로그-시작하기/">Hexo와 Github로 블로그 시작하기</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/28/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Chanhee Jo<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
